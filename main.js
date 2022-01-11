@@ -24,7 +24,7 @@ function uploadimg() {
 	window.addEventListener("keydown", my_keydown);
 	function my_keydown(e)
 {
-	keypressed = e.keyCode;
+	keyPressed = e.keyCode;
 	console.log(keyPressed);
 
 	if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
