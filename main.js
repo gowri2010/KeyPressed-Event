@@ -1,4 +1,3 @@
-// Create a reference for the canvas
 canvas = document.getElementById('myCanvas');
 ctx = canvas.getContext("2d");
 img_width = 300;
@@ -21,29 +20,41 @@ function uploadimg() {
 }
 
 //Write a code to grab the key-pressed event
-function my_keydown(e)
+
+	window.addEventListener("keydown", my_keydown);
+	function my_keydown(e)
 {
 	keypressed = e.keyCode;
 	console.log(keyPressed);
 
-	if((keyPressed >=97 && keyPressed<=122)|| (keypressed>=65 && keyPressed<=90))
+	if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
 	{
-		aplhabetkey();
-		document.getElementById("d1").innerHTML="You pressed Alphabet Key";
-		console.log("alphabet key");
+	aplhabetkey();
+	document.getElementById("d1").innerHTML="You pressed Alphabet Key";
+	console.log("alphabet key");
 	}
-}
-function my_keydown(e)
-{
-	window.addEventListener("keydown", my_keydown);
-	keyPressed = e.keyCode;
-	console.log(keyPressed);
-	
-		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
-		
-		//write a code to check the type of key pressed
-
-
+	else if(keyPressed >=48 && keyPressed<=57)
+	{
+	numberkey();
+	document.getElementById("d1").innerHTML="You pressed Number Key";
+	console.log("Number key");
+	}
+	else if(keyPressed >=37 && keyPressed<=40)
+	{
+	arrowkey();
+	document.getElementById("d1").innerHTML="You pressed Arrow Key";
+	console.log("Arrow Key");
+	}
+	else if((keyPressed ==17)|| (keyPressed ==18 || keyPressed ==27))
+	{
+	specialkey();
+	document.getElementById("d1").innerHTML="You pressed ctrl/esc/alt";
+	console.log("special key");
+	}
+	else{
+	otherkey();
+	document.getElementById("d1").innerHTML="You pressed symbol or other key";
+	}
 function aplhabetkey()
 {
 	//upload respective image with the message. 
@@ -52,14 +63,19 @@ function aplhabetkey()
 }
 function numberkey()
 {
+	img_image="Numberkey.png";
+	add();
 	
 }
 function arrowkey()
 {
+	img_image="Arrowkey";
+	add();
 }
 function specialkey()
 {
-	
+    img_image="Specialkey";
+    add();
 }
 function otherkey()
 {
