@@ -55,6 +55,7 @@ function uploadimg() {
 	otherkey();
 	document.getElementById("d1").innerHTML="You pressed symbol or other key";
 	}
+}
 function aplhabetkey()
 {
 	//upload respective image with the message. 
